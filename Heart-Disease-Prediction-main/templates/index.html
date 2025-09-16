@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #ff4d4d;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Heart Disease Prediction</h1>
+    <form method="post" action="/predict">
+        <label>Age</label>
+        <input type="number" name="age" required step="0.1">
+
+        <label>Sex (1=Male, 0=Female)</label>
+        <select name="sex" required>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+
+        <label>Chest Pain Type (1-4)</label>
+        <input type="number" name="cp" required min="1" max="4">
+
+        <label>Resting Blood Pressure</label>
+        <input type="number" name="trestbps" required>
+
+        <label>Cholesterol</label>
+        <input type="number" name="chol" required>
+
+        <label>Fasting Blood Sugar (1=True, 0=False)</label>
+        <select name="fbs" required>
+            <option value="1">True</option>
+            <option value="0">False</option>
+        </select>
+
+        <label>Resting ECG (0-2)</label>
+        <input type="number" name="restecg" required min="0" max="2">
+
+        <label>Max Heart Rate Achieved</label>
+        <input type="number" name="thalach" required>
+
+        <label>Exercise Induced Angina (1=Yes, 0=No)</label>
+        <select name="exang" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label>Oldpeak</label>
+        <input type="number" name="oldpeak" required step="0.1">
+
+        <label>ST Slope (0-2)</label>
+        <input type="number" name="slope" required min="0" max="2">
+
+        <button type="submit">Predict</button>
+    </form>
+</div>
+</body>
+</html>
